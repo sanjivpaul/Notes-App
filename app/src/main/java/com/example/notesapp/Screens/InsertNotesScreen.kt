@@ -22,6 +22,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -81,6 +82,7 @@ fun InsertNotesScreen() {
                     },
                     modifier = Modifier
                         .fillMaxWidth()
+                        .clip(shape = RoundedCornerShape(corner = CornerSize(10.dp)))
                         .background(ColorGrey)
                 )
 
@@ -107,6 +109,7 @@ fun InsertNotesScreen() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .fillMaxHeight(0.6f)
+                        .clip(shape = RoundedCornerShape(corner = CornerSize(10.dp)))
                         .background(ColorGrey)
                 )
             }

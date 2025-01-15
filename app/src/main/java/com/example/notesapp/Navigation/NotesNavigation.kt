@@ -17,7 +17,7 @@ fun NotesNavigation(navHostController: NavHostController) {
         }
 
         composable(NotesNavigationItems.HomeScreen.route) {
-            NotesScreen()
+            NotesScreen(navHostController)
         }
 
         composable(NotesNavigationItems.InsertNotesScreen.route) {

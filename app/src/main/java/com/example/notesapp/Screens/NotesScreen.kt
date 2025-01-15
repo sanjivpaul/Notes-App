@@ -26,19 +26,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.notesapp.Models.Notes
+import com.example.notesapp.Navigation.NotesNavigationItems
 import com.example.notesapp.ui.theme.ColorBlack
 import com.example.notesapp.ui.theme.ColorGrey
 import com.example.notesapp.ui.theme.ColorLightGrey
 import com.example.notesapp.ui.theme.ColorRed
 
 @Composable
-@Preview
-fun NotesScreen() {
+//@Preview
+fun NotesScreen(navHostController: NavHostController) {
 
     val notesList = listOf(
         Notes(
-            title = "Meeting with team",
+            title = "Meeting with Debux",
             description = "I am using Xcode to manage the profile of a simple test app. I created the project and enabled CloudKit, but wanted to use another container"
         ),
         Notes(
@@ -92,7 +94,10 @@ fun NotesScreen() {
             contentColor = Color.White,
             containerColor = Color.Green,
             shape = RoundedCornerShape(corner = CornerSize(30.dp)),
-            onClick = { }) {
+            onClick = {
+                navHostController.navigate(NotesNavigationItems.InsertNotesScreen.route)
+
+            }) {
             Icon(imageVector = Icons.Default.Add, contentDescription = "")
         }
     }) { innerPadding ->
